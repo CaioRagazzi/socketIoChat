@@ -3,13 +3,13 @@ const client = require('socket.io').listen(4000).sockets;
 
 // connect to mongo
 
-mongo.connect('mongodb://127.0.0.1:27017', function (err, client) {
+mongo.connect('mongodb://127.0.0.1:27017', function (err, dataBase) {
     if (err) {
         throw err
     }
 
     console.log('MongoDB connected...');
-    var db = client.db('mongochat')
+    var db = dataBase.db('mongochat')
 
     // connect to socket.io
 
